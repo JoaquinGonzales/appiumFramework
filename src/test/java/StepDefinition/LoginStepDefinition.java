@@ -14,18 +14,13 @@ import org.testng.Assert;
 import java.net.MalformedURLException;
 
 public class LoginStepDefinition {
-    private StartPage startPage = new StartPage();
+
     private LoginPage loginPage = new LoginPage();
-    private SettingsPage settingsPage = new SettingsPage();
-    private HomePage homePage = new HomePage();
+
 
     public LoginStepDefinition() throws MalformedURLException {
     }
 
-    @Given("^I navigate to login page$")
-    public void i_navigate_to_login_page(){
-        startPage.clickLoginLink();
-    }
 
     @When("^I enter \"([^\"]*)\" as user and \"([^\"]*)\" as password$")
     public void iEnterAsUserAndAsPassword(String userName, String password)  {
@@ -38,10 +33,9 @@ public class LoginStepDefinition {
     }
 
 
-    @Then("^I should see the email \"([^\"]*)\" in the user email field on the Osha reporting mobile application$")
-    public void iShouldSeeTheEmailInTheUserEmailFieldOnTheOshaReportingMobileApplication(String emailAddress) {
-        homePage.clickOnSettingsIcon();
-        String expectedResult = settingsPage.returnEmailUserLogged();
-        Assert.assertEquals(emailAddress, expectedResult);
+    @And("^I am logged in on Osha app with the following username \"([^\"]*)\" and password \"([^\"]*)\"$")
+    public void iAmLoggedInOnOshaAppWithTheFollowingUsernameAndPassword(String username, String password) {
+        loginPage.login(username, password);
+        loginPage.clickLoginButton();
     }
 }
