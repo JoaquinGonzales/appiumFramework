@@ -8,7 +8,7 @@ import java.net.MalformedURLException;
 
 
 public abstract class BasePage {
-    private AndroidDriver androidDriver;
+    protected AndroidDriver androidDriver;
 
     public BasePage() throws MalformedURLException {
         androidDriver = AndroidDriverManager.getInstance();
