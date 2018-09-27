@@ -25,6 +25,5 @@ public class SettingsStepDefinition {
     @And("^I click on log out button$")
     public void iClickOnLogOutButton() {
         settingsPage.swipeDown();
-        settingsPage.clickOnLogOutButton();
     }
 }

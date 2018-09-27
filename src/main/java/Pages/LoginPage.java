@@ -31,6 +31,7 @@ public class LoginPage extends BasePage {
 
     public void enterPassword(String password)
     {
+        init();
         elements.get(1).sendKeys(password);
     }
 

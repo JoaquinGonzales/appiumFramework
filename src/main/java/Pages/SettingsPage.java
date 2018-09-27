@@ -25,18 +25,20 @@ public class SettingsPage extends BasePage {
 
     public void swipeDown()
     {
-        try{
-            TouchAction action = new TouchAction(androidDriver);
-            action.press(point(10,100));
-            action.moveTo(point(10,10));
-            action.release();
-            action.perform();
-            System.out.println("Swipe down was Successfully done");
-        }
-        catch (Exception e)
-        {
-            System.out.println("swipe was not sucessfully");
-        }
+        androidDriver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Logout\"));").click();
+
+//        try{
+//            TouchAction action = new TouchAction(androidDriver);
+//            action.press(point(10,100));
+//            action.moveTo(point(10,10));
+//            action.release();
+//            action.perform();
+//            System.out.println("Swipe down was Successfully done");
+//        }
+//        catch (Exception e)
+//        {
+//            System.out.println("swipe was not sucessfully");
+//        }
     }
 
     public void clickOnLogOutButton()

@@ -18,4 +18,9 @@ public class HomeStepDefinition {
     public void i_Click_on_Settings_icon() {
        homePage.clickOnSettingsIcon();
     }
+
+    @When("^I Click on New Injury icon$")
+    public void iClickOnNewInjuryIcon() {
+        homePage.clickOnNewInjuryIcon();
+    }
 }

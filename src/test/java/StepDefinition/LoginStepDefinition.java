@@ -16,6 +16,7 @@ import java.net.MalformedURLException;
 public class LoginStepDefinition {
 
     private LoginPage loginPage = new LoginPage();
+    private StartPage startPage = new StartPage();
 
 
     public LoginStepDefinition() throws MalformedURLException {
@@ -37,5 +38,12 @@ public class LoginStepDefinition {
     public void iAmLoggedInOnOshaAppWithTheFollowingUsernameAndPassword(String username, String password) {
         loginPage.login(username, password);
         loginPage.clickLoginButton();
+    }
+
+
+    @Given("^I am logeed to the app with the \"([^\"]*)\" as user and \"([^\"]*)\" as password$")
+    public void iAmLogeedToTheAppWithTheAsUserAndAsPassword(String userName, String password)  {
+        startPage.clickLoginLink();
+        loginPage.login(userName, password);
     }
 }

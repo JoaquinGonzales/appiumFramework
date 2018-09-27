@@ -12,9 +12,18 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//android.widget.ImageButton[@index='0']")
     private WebElement settingsIcon;
 
+    @FindBy(xpath = "//android.widget.Button[@index='4']")
+    private WebElement newInjuryIcon;
+
     public void clickOnSettingsIcon()
     {
         settingsIcon.click();
     }
+
+    public void clickOnNewInjuryIcon()
+    {
+        newInjuryIcon.click();
+    }
+
 
 }

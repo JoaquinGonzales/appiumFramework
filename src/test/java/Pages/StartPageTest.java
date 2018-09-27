@@ -36,4 +36,5 @@ public class StartPageTest {
 
         Assert.assertEquals(actualResult, username);
     }
+
 }
