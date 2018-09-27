@@ -13,8 +13,16 @@ public class StartPage extends BasePage {
     @FindBy(xpath = "//android.widget.TextView[@text='Log in']")
     WebElement loginLink;
 
+    @FindBy(xpath = "//android.widget.TextView[@text='Welcome']")
+    private WebElement welcomeText;
+
     public void clickLoginLink()
     {
         loginLink.click();
+    }
+
+    public String getWelcomeTitle()
+    {
+        return welcomeText.getText();
     }
 }
