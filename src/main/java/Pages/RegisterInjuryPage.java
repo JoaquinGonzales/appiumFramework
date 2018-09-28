@@ -137,7 +137,6 @@ public class RegisterInjuryPage extends BasePage {
     public void fillOutCompliantEmail(String compliantEmail) throws MalformedURLException {
         WebElement compliantAddressElement = CommonEvents.findByContainsText("Email");
         compliantAddressElement.sendKeys(compliantEmail);
-        androidDriver.navigate().back();
     }
 
     public void fillOutCaseNumber(String caseNumber) {
@@ -201,7 +200,7 @@ public class RegisterInjuryPage extends BasePage {
     }
 
     public void clickOnSaveAndSend() throws MalformedURLException {
-        WebElement saveAndSendButton = CommonEvents.scrollDownUntilEditableElement("Save and Send");
+        WebElement saveAndSendButton = CommonEvents.scrolldownUntillButtonIsVisible("Save and Send");
         saveAndSendButton.click();
     }
 }

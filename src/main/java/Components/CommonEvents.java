@@ -42,5 +42,10 @@ public class CommonEvents {
         Date date = new Date();
         return formatter.format(date);
     }
+
+    public static WebElement scrolldownUntillButtonIsVisible(String buttonName) throws MalformedURLException {
+        return AndroidDriverManager.getInstance().findElementByAndroidUIAutomator
+                ("new UiScrollable(new UiSelector().className(\"android.widget.Button\")).scrollIntoView(text(\""+buttonName+"\"));");
+    }
 }
 
