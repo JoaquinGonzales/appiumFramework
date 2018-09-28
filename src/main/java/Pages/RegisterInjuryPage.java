@@ -1,9 +1,11 @@
 package Pages;
 
 import Components.CommonEvents;
+import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidKeyCode;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
 import java.net.MalformedURLException;
 
@@ -27,6 +29,13 @@ public class RegisterInjuryPage extends BasePage {
     @FindBy(xpath = "//android.widget.EditText[@text='Address']")
     private WebElement addressTextField;
 
+    @FindBy(xpath = "//android.widget.EditText[@text='Select type']")
+    private WebElement iAmTextField;
+
+    /*@FindBy(how = How.XPATH, using = "//android.widget.EditText[contains(.,'name')]")
+    private WebElement compliantNameElement;*/
+
+    //@FindBy(how=How.XPATH,using=("//android.widget.TextView55[contains(.,‘Family Profile’)]"))
 
     public RegisterInjuryPage() throws MalformedURLException {
     }
@@ -71,9 +80,41 @@ public class RegisterInjuryPage extends BasePage {
     public void fillOutManagementOfficial(String managementOfficial) throws MalformedURLException {
         WebElement managementOfficialelement = CommonEvents.scrollDownUntilEditableElement(ManagementOfficialeToLocator);
         managementOfficialelement.sendKeys(managementOfficial);
+        androidDriver.navigate().back();
     }
 
     public void moveToNextPage() throws MalformedURLException {
         CommonEvents.swipeAction();
     }
+
+    public void selectIAm()
+    {
+        iAmTextField.click();
+        androidDriver.findElementById("android:id/text1").click();
+        androidDriver.findElementById("android:id/button1").click();
+    }
+
+    public void fillOutCompliantName(String compliantName) throws MalformedURLException {
+        WebElement compliantNameElement = CommonEvents.findByContainsText("name");
+        compliantNameElement.sendKeys(compliantName);
+    }
+
+    public void fillOutCompliantAddress(String compliantAddress) throws MalformedURLException {
+        WebElement compliantAddressElement = CommonEvents.findByContainsText("Address");
+        compliantAddressElement.sendKeys(compliantAddress);
+    }
+
+    public void fillOutCompliantPhone(String compliantPhone) throws MalformedURLException {
+        WebElement compliantAddressElement = CommonEvents.findByContainsText("Phone");
+        compliantAddressElement.sendKeys(compliantPhone);
+        androidDriver.navigate().back();
+    }
+
+    public void fillOutCompliantEmail(String compliantEmail) throws MalformedURLException {
+        WebElement compliantAddressElement = CommonEvents.findByContainsText("Email");
+        compliantAddressElement.sendKeys(compliantEmail);
+    }
+
+
+
 }

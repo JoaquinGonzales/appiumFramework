@@ -11,3 +11,9 @@ Feature: Register a new Injury
     And I introduce "73773296" as phone
     And I introduce "Managment Official" as Management Official
     And I move it to next page
+    And I Select Employee Type
+    And I introduce "Compliant Name" as compliant name
+    And I introduce "Compliant Address" as compliant address
+    And I introduce "Compliant Phone" as compliant phone
+    And I introduce "Compliant Email" as compliant Email
+    And I move it to next page

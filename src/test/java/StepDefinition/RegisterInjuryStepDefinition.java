@@ -51,4 +51,29 @@ public class RegisterInjuryStepDefinition {
     public void iMoveItToNextPage() throws MalformedURLException {
         registerInjuryPage.moveToNextPage();
     }
+
+    @And("^I Select Employee Type$")
+    public void iSelectEmployeeType(){
+        registerInjuryPage.selectIAm();
+    }
+
+    @And("^I introduce \"([^\"]*)\" as compliant name$")
+    public void iIntroduceAsCompliantName(String compliantName) throws MalformedURLException {
+        registerInjuryPage.fillOutCompliantName(compliantName);
+    }
+
+    @And("^I introduce \"([^\"]*)\" as compliant address$")
+    public void iIntroduceAsCompliantAddress(String compliantAddress) throws MalformedURLException {
+        registerInjuryPage.fillOutCompliantAddress(compliantAddress);
+    }
+
+    @And("^I introduce \"([^\"]*)\" as compliant phone$")
+    public void iIntroduceAsCompliantPhone(String compliantPhone) throws MalformedURLException{
+        registerInjuryPage.fillOutCompliantPhone(compliantPhone);
+    }
+
+    @And("^I introduce \"([^\"]*)\" as compliant Email$")
+    public void iIntroduceAsCompliantEmail(String compliantEmail) throws MalformedURLException {
+        registerInjuryPage.fillOutCompliantEmail(compliantEmail);
+    }
 }
