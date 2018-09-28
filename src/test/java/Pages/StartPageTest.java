@@ -1,5 +1,6 @@
 package Pages;
 
+import Components.CommonEvents;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -24,6 +25,13 @@ public class StartPageTest {
     {
         page.clickLoginLink();
         loginPage.login("joaquinjqn2@gmail.com","defenseoftheancient");
+    }
+
+    @Test
+    public void getDate()
+    {
+        System.out.println("teh actual Date"+ CommonEvents.getActualDate());
+        page.getWelcomeTitle();
     }
 
     @Test void clickOnSettingsIcon()

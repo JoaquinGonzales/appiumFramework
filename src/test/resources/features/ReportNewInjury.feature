@@ -17,3 +17,14 @@ Feature: Register a new Injury
     And I introduce "Compliant Phone" as compliant phone
     And I introduce "Compliant Email" as compliant Email
     And I move it to next page
+    And I introduce "123456" as case number
+    And I enter "Joaquin Gonzales" as employee name
+    And I enter "Engineer" as Job tittle
+    And I Select Today as Date Injury
+    And I enter "Work Place" as where event occurs
+    And I enter "The injury Description" as decription
+    And I select Days away from work as Variant
+    And I enter "away from work" away from work option
+    And I select job Transfer restriction
+    And I set a report today date
+    And I click on save and send button

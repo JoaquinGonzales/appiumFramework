@@ -7,6 +7,8 @@ import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 
 import java.net.MalformedURLException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static io.appium.java_client.touch.WaitOptions.waitOptions;
 import static java.time.Duration.ofSeconds;
@@ -32,6 +34,13 @@ public class CommonEvents {
     public static WebElement findByContainsText(String name) throws MalformedURLException {
         return AndroidDriverManager.getInstance().findElementByAndroidUIAutomator
                 ("new UiSelector().className(\"android.widget.EditText\").textContains(\""+name+"\")");
+    }
+
+    public static String getActualDate()
+    {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/M/yy");
+        Date date = new Date();
+        return formatter.format(date);
     }
 }
 

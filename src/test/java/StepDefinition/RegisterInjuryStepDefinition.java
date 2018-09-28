@@ -76,4 +76,59 @@ public class RegisterInjuryStepDefinition {
     public void iIntroduceAsCompliantEmail(String compliantEmail) throws MalformedURLException {
         registerInjuryPage.fillOutCompliantEmail(compliantEmail);
     }
+
+    @And("^I introduce \"([^\"]*)\" as case number$")
+    public void iIntroduceAsCaseNumber(String caseNumber) {
+        registerInjuryPage.fillOutCaseNumber(caseNumber);
+    }
+
+    @And("^I enter \"([^\"]*)\" as employee name$")
+    public void iEnterAsEmployeeName(String employeeName) throws MalformedURLException {
+        registerInjuryPage.fillOutEmployeesName(employeeName);
+    }
+
+    @And("^I enter \"([^\"]*)\" as Job tittle$")
+    public void iEnterAsJobTittle(String jobTittle) {
+        registerInjuryPage.fillOutJobTittle(jobTittle);
+    }
+
+    @And("^I Select Today as Date Injury$")
+    public void iSelectTodayAsDateInjury() throws MalformedURLException {
+        registerInjuryPage.clickOnCalendar();
+    }
+
+    @And("^I enter \"([^\"]*)\" as where event occurs$")
+    public void iEnterAsWhereEventOccurs(String workPlaceName) {
+        registerInjuryPage.fillOutWorkPlace(workPlaceName);
+    }
+
+    @And("^I enter \"([^\"]*)\" as decription$")
+    public void iEnterAsDecription(String description) {
+        registerInjuryPage.fillOutDetail(description);
+    }
+
+    @And("^I select Days away from work as Variant$")
+    public void iSelectDaysAwayFromWorkAsVariant() {
+        registerInjuryPage.selectVariant();
+    }
+
+    @And("^I enter \"([^\"]*)\" away from work option$")
+    public void iEnterAwayFromWorkOption(String awayFromOption) {
+        registerInjuryPage.awayFromWork(awayFromOption);
+    }
+
+    @And("^I select job Transfer restriction$")
+    public void iSelectJobTransferRestriction(){
+      registerInjuryPage.selectCondition();
+    }
+
+    @And("^I set a report today date$")
+    public void iSetAReportTodayDate(){
+        registerInjuryPage.selectDate();
+    }
+
+    @And("^I click on save and send button$")
+    public void iClickOnSaveAndSendButton() throws MalformedURLException {
+       registerInjuryPage.clickOnSaveAndSend();
+    }
 }
