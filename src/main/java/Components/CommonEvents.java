@@ -1,5 +1,6 @@
 package Components;
 
+import cucumber.api.java.en.And;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.Dimension;
@@ -18,6 +19,7 @@ public class CommonEvents {
     public static WebElement scrollDownUntilEditableElement(String text) throws MalformedURLException {
         return AndroidDriverManager.getInstance().findElementByAndroidUIAutomator
                 ("new UiScrollable(new UiSelector().className(\"android.widget.EditText\")).scrollIntoView(text(\""+text+"\"));");
+
     }
 
     public static void swipeAction() throws MalformedURLException {
@@ -29,6 +31,17 @@ public class CommonEvents {
        pY.withCoordinates(550,980);
 
        action.press(pX).moveTo(pY).waitAction(waitOptions(ofSeconds(1))).release().perform();
+    }
+
+    public static void swipeActionVertical() throws MalformedURLException {
+
+        TouchAction action = new TouchAction(AndroidDriverManager.getInstance());
+        PointOption pX = new PointOption();
+        pX.withCoordinates(1024,980);
+        PointOption pY = new PointOption();
+        pY.withCoordinates(1024,280);
+
+        action.press(pX).moveTo(pY).waitAction(waitOptions(ofSeconds(1))).release().perform();
     }
 
     public static WebElement findByContainsText(String name) throws MalformedURLException {
@@ -43,9 +56,7 @@ public class CommonEvents {
         return formatter.format(date);
     }
 
-    public static WebElement scrolldownUntillButtonIsVisible(String buttonName) throws MalformedURLException {
-        return AndroidDriverManager.getInstance().findElementByAndroidUIAutomator
-                ("new UiScrollable(new UiSelector().className(\"android.widget.Button\")).scrollIntoView(text(\""+buttonName+"\"));");
-    }
+
+
 }
 

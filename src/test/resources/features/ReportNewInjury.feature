@@ -15,7 +15,7 @@ Feature: Register a new Injury
     And I introduce "Compliant Name" as compliant name
     And I introduce "Compliant Address" as compliant address
     And I introduce "Compliant Phone" as compliant phone
-    And I introduce "Compliant Email" as compliant Email
+    And I introduce "joaquinjqn2@gmail.com" as compliant Email
     And I move it to next page
     And I introduce "123456" as case number
     And I enter "Joaquin Gonzales" as employee name

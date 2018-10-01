@@ -3,6 +3,7 @@ package Components;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -11,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class AndroidDriverManager {
 
     protected static AndroidDriver adriver = null;
+    protected static WebDriverWait webDriverWait = null;
 
     private AndroidDriverManager() throws MalformedURLException {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
@@ -22,6 +24,7 @@ public class AndroidDriverManager {
         desiredCapabilities.setCapability("appActivity","com.store2phone.snappii.ui.activities.StartActivity");
         adriver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),desiredCapabilities);
         adriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        webDriverWait = new WebDriverWait(adriver,10);
     }
 
     public static AndroidDriver getInstance() throws MalformedURLException {
@@ -32,4 +35,8 @@ public class AndroidDriverManager {
         return adriver;
     }
 
+    public static WebDriverWait getWait()
+    {
+        return webDriverWait;
+    }
 }

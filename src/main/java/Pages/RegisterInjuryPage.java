@@ -6,6 +6,7 @@ import io.appium.java_client.android.AndroidKeyCode;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
 import java.util.Date;
@@ -61,6 +62,7 @@ public class RegisterInjuryPage extends BasePage {
 
     @FindBy(xpath = "//android.widget.Button[@text='Save and Send']")
     private WebElement saveButton;
+
 
     /*@FindBy(how = How.XPATH, using = "//android.widget.EditText[contains(.,'name')]")
     private WebElement compliantNameElement;*/
@@ -200,7 +202,7 @@ public class RegisterInjuryPage extends BasePage {
     }
 
     public void clickOnSaveAndSend() throws MalformedURLException {
-        WebElement saveAndSendButton = CommonEvents.scrolldownUntillButtonIsVisible("Save and Send");
-        saveAndSendButton.click();
+        CommonEvents.swipeActionVertical();
+        androidDriver.findElementByXPath("//android.widget.Button[@text='Save and Send']").click();
     }
 }
